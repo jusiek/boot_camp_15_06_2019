@@ -1,0 +1,15 @@
+min_l = None
+max_l = None
+
+while True:
+    x = input(("wpisz liczbe lub k)")
+            if x == 'k':
+                break
+            if min_l is None:
+                min_l = int(x)
+            if max_l is None:
+                max_l = int(x)
+    print(f"""
+Minimum to: {min_l}
+MAximum to: {max_l}
+""")
