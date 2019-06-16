@@ -10,6 +10,6 @@ while True:
             if max_l is None:
                 max_l = int(x)
     print(f"""
-Minimum to: {min_l}
-MAximum to: {max_l}
+ZnalezioneMinimum to: {min_l}
+ZnalezioneMAximum to: {max_l}
 """)
