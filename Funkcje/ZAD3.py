@@ -1,12 +1,24 @@
-def policz_znaki("Ala ma <kota> a kot ma ale"):
-    return
+def policz_znaki(napis):
+    licznik = 0
+    poziom = 0
+    for znak in napis:
+        if znak == "<":
+            poziom+= 1
+            continue
+        elif znak == ">":
+            poziom -= 1
+            continue
+        licznik += poziom
+        return
 
-def test_policz_znaki():
-    assert policz_znaki(4) == 4
-    assert policz_znaki(3) == 9
-    assert policz_znaki(2, 3) == 8
-    assert policz_znaki(3, 3) == 27
 
+def test_policz_znaki_1_poziom():
+    assert policz_znaki ('ala ma <kota> a kot ma ale') == 4
+    assert policz_znaki ('ala ma <kota> a kot ma ale') == 6
 
-def test_policz_znaki():
-    assert policz_znaki("a","aaaa", 3) == {'a'}
+def test_policz_znaki_wiele_poziomow():
+    assert policz_znaki('a <a<a>>>') == 6
+
+def test_policz_znaki_wiele_poziomow_niestandardowe_znaki():
+    assert policz_znaki('ala [kota[a kot]] ma [ale]') == 18
+
